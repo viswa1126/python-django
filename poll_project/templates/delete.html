@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Deletepage{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Delete Poll</h3>
+            </div>
+				<p>Are you sure you want to delete "{{ poll }}"?</p>
+
+					<a href="{% url 'home' %}" >Cancel</a>
+
+				<form method="POST" action="">
+				{% csrf_token %}
+				<input type="submit" name="Confirm">
+				</form>
+
+		</div>
+	</div>
+</div>
+{% endblock %}
